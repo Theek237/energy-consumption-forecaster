@@ -17,7 +17,7 @@ st.set_page_config(
 @st.cache_resource
 def load_artifacts():
     from tensorflow.keras.models import load_model
-    model = load_model('energy_model.h5')
+    model = load_model('energy_model.h5', compile=False)
     scaler_X = joblib.load('scaler_X.pkl')
     feature_names = joblib.load('feature_names.pkl')
     return model, scaler_X, feature_names
